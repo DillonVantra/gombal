@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gombal</title>
+
+    <!-- Link CSS Vanilla -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Link Bootstrap 5 -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5 text-center">
+      <img
+        src="mob1.jpg"
+        alt="mob"
+        class="d-block mx-auto rounded-5"
+        width="250px"
+      />
+      <h1 class="mt-2">Halo cewek, kamu lagi apa?</h1>
+      <h1 class="mb-5">Bapak kamu pencuri ya?</h1>
+      <button
+        id="btn_iya"
+        onclick="Swal.fire({
+          title: 'Karena kamu telah mencuri hatiku',
+          icon: 'success',
+        })"
+        class="btn btn-success"
+      >
+        Kok tau?
+      </button>
+      <button
+        id="btn_bukan"
+        onclick="bukan(this)"
+        class="btn btn-warning position-absolute"
+      >
+        bukan
+      </button>
+    </div>
+
+    <script src="./node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script>
+      function bukan(id) {
+        var iya = document.getElementById("btn_iya");
+        var i = Math.floor(Math.random() * 700) + 1;
+        var j = Math.floor(Math.random() * 100) + iya.offsetTop;
+        id.style.left = i + "px";
+        id.style.top = j + "px";
+      }
+    </script>
+  </body>
+</html>
